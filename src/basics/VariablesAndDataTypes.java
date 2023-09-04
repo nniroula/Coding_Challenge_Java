@@ -12,6 +12,17 @@ public class VariablesAndDataTypes {
 	 * String is not a primitive data type in java
 	 */
 	
+	/**
+	 * local variable
+	 * static variable
+	 * instance variable
+	 * public variable 
+	 * private variable
+	 * protected variable
+	 * default values for variables
+	 * data types for variables
+	 * /
+	
 	/*
 	 * CONSTANT value is declared using final dataType variableName or 
 	 * 
