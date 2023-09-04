@@ -109,6 +109,7 @@ class ProtectedMethods{
 	}
 }
 
+// public methods have global access. They can be access from anywhere in the program
 class PublicMethods{
 	public int sum(int num1, int num2) {
 		return num1 + num2;
