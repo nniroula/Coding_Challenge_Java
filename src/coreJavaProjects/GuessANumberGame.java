@@ -26,17 +26,12 @@ class ComputerGeneratedRandomNumber{
 class PlayGame{
 	Scanner sc = new Scanner(System.in);
 	ComputerGeneratedRandomNumber randomNum = new ComputerGeneratedRandomNumber();
-//	int currentRandomNum = randomNum.generateRandomNumber();
-//	System.out.printf("Computer number = %d", currentRandomNum);
 	
-//	public String playGame(int number) {
+	//	public String playGame(int number) {
 	public void playGame() {
 		int currentRandomNum = randomNum.generateRandomNumber();
 		System.out.printf("Computer number = %d", currentRandomNum);
 		System.out.println();
-		
-//		System.out.println("Enter a number between 0 and 10: ");
-//		int userInput = sc.nextInt();
 		
 		int maxAttempt = 10; // b/c 0 - 9 = 10 numbers
 		int minAttempt = 0;
@@ -44,19 +39,14 @@ class PlayGame{
 		int userInput = sc.nextInt();
 		minAttempt += 1;
 		while(minAttempt <= 10) {
-			//System.out.println("Enter a number between 0 and 10: ");
-			//int userInput = sc.nextInt();
-			
 			if(userInput < currentRandomNum) {
 				System.out.println("little bit small");
 				System.out.print("Enter number again: ");
-				//System.out.println();
 				userInput = sc.nextInt();
 				minAttempt += 1;
 			}else if(userInput > currentRandomNum) {
 				System.out.println("little big");
 				System.out.print("Enter number again: ");
-				//System.out.println();
 				userInput = sc.nextInt();
 				minAttempt += 1;
 			}else if(userInput == currentRandomNum) {
@@ -65,7 +55,6 @@ class PlayGame{
 			}else {
 				System.out.println("Invalid number!");
 				System.out.print("Enter number again: ");
-				//System.out.println();
 				userInput = sc.nextInt();
 			}
 		}
@@ -74,8 +63,6 @@ class PlayGame{
 		if(minAttempt > 10) {
 			System.out.println("You reached maximum allowd attempts!");
 		}
-		
-		//return "You won it!";
 	}
 }
 
