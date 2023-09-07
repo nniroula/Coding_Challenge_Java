@@ -28,6 +28,34 @@ class OneDimensionalArray{
 		//System.out.println(languages);
 		return languages;
 	}
+	
+	public int findMinValue(int arr[]) {
+		// if an array is empty
+		if(arr.length == 0) {
+			return Integer.MIN_VALUE;  // property in Integer class
+		}
+		int minValue = arr[0];
+		for(int arrayElement : arr) {      // for each loop
+			if(arrayElement < minValue) {
+				minValue = arrayElement;
+			}
+		}
+		return minValue;
+	}
+	
+	//public String[] addRemoveUpdateElement(String arr1[]) {
+	public String[] addRemoveUpdateElement() {
+		String languages[] = new String[5];
+		// add elements
+		languages[0] = "Java";
+		languages[1] = "JS";
+		languages[2] = "Py";
+		languages[3] = "C++";
+		languages[4] = "C";
+		// update an element
+		languages[1] = "C#";
+		return languages;
+	}
 }
 
 
@@ -38,5 +66,19 @@ public class ArraysInJava {
 		OneDimensionalArray oneDArray = new OneDimensionalArray();
 		String resultantOneDArray[] = oneDArray.getProgrammingLanguages();
 		System.out.println(Arrays.toString(resultantOneDArray));
+		
+		// findMinValue method
+		int arr1[] = {5, -6, 3, -2};
+		int arr2[] = {};
+		int minimumValue = oneDArray.findMinValue(arr2);
+		if(minimumValue == Integer.MIN_VALUE) {
+			System.out.println("Array is empty!");
+		}else {
+			System.out.printf("Minimum value is %d", minimumValue);
+		}
+		
+		// addRemoveUpdateElement method
+		String[] strArray = oneDArray.addRemoveUpdateElement();
+		System.out.println(Arrays.toString(strArray));
 	}
 }
