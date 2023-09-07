@@ -56,7 +56,24 @@ class OneDimensionalArray{
 		languages[1] = "C#";
 		return languages;
 	}
+	
+	// array methods and properties
+	public String[] arrayMethodsAndProperties() {
+		String frameworks[] = new String[5];
+		frameworks[0] = "Spring";
+		frameworks[1] = "Springboot";
+		frameworks[2] = "JDBC";
+		frameworks[3] = "Hibernate";
+		frameworks[4] = "Mokito";
+		
+		// make copies of array with Arrays.copyOf() method
+		// compare two arrays with Arrays.equals(arr1, arr2) method
+		
+		return frameworks;
+	}
 }
+
+	
 
 
 
@@ -80,5 +97,9 @@ public class ArraysInJava {
 		// addRemoveUpdateElement method
 		String[] strArray = oneDArray.addRemoveUpdateElement();
 		System.out.println(Arrays.toString(strArray));
+		
+		//arrayMethodsAndProperties method
+		String backendTools [] = oneDArray.arrayMethodsAndProperties();
+		System.out.println(Arrays.toString(backendTools));
 	}
 }
