@@ -71,11 +71,63 @@ class OneDimensionalArray{
 		
 		return frameworks;
 	}
+	
+	// common array algorithms
+	
+	//1. Filling an array
+	//Q fill the array with first 5 perfect square numbers
+	public int[] fillArrayWithPerfectSquares() {
+		final int LENGTH = 5;
+		int arrayOfSquares[] = new int[LENGTH];
+		for(int i = 0; i<LENGTH; i++) {
+			arrayOfSquares[i] = i*i;
+		}
+		return arrayOfSquares;
+	}
+	
+	//2. Sum of the array
+	public double getSumOfArrayElem(double arr[]) {
+		double sum = 0.0;
+		if(arr.length == 0) {
+			return -1;
+		}else {
+			for(double element: arr) {
+				sum += element;
+			}
+		}
+		return sum;
+	}
+	
+	//3. Average of the array elements
+	public double getAveargeOfArrayElems(int arr2[]) {
+		double average = 0;
+		int sum = 0;
+		if(arr2.length == 0) {
+			return -1;
+		}else {
+			for(int element: arr2) {
+				sum += element;
+			}
+		}
+		average = (double)sum/arr2.length;
+		return average;
+	}
+	
+	//4. removing array elements
+	// to remove an element, move one index position down from the right of the element to be removed
+	public String[] removeElem(String strs[]) {
+		// remove third element
+		for(int i = 2; i< strs.length - 1; i++) { // third element= index 2
+			strs[i] = strs[i + 1];
+			strs[i + 1] = null;
+		}
+		return strs;
+	}
+	
+	
 }
 
 	
-
-
 
 public class ArraysInJava {
 	public static void main(String []args) {
@@ -101,5 +153,26 @@ public class ArraysInJava {
 		//arrayMethodsAndProperties method
 		String backendTools [] = oneDArray.arrayMethodsAndProperties();
 		System.out.println(Arrays.toString(backendTools));
+		
+		//fillArrayWithPerfectSquares
+		int resultantArray [] = oneDArray.fillArrayWithPerfectSquares();
+		System.out.println(Arrays.toString(resultantArray));
+		
+		// getSumOfArrayElem
+		double array1[] = {1.0, 4.4, 8.5};
+		double arraySum = oneDArray.getSumOfArrayElem(array1);
+		System.out.printf("Sum of array elements is %.2f", arraySum);
+		System.out.println();
+		
+		//getAveargeOfArrayElems
+		int arr[] = {2, 4, 5, 8, 9};
+		double avg = oneDArray.getAveargeOfArrayElems(arr);
+		System.out.printf("The average of the array elements is %.3f", avg);
+		System.out.println();
+		
+		//removeElem
+		String langs[] = {"Java", "HTML", "CSS", "JS"};
+		String resultantStringArray[] = oneDArray.removeElem(langs);
+		System.out.println(Arrays.toString(resultantStringArray));
 	}
 }
