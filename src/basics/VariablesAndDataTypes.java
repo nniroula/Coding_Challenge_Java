@@ -14,8 +14,8 @@ public class VariablesAndDataTypes {
 	
 	/**
 	 * local variable
-	 * static variable
-	 * instance variable
+	 * static variable -> class variable
+	 * instance variable -> object variable, and is mostly private
 	 * public variable 
 	 * private variable
 	 * protected variable
