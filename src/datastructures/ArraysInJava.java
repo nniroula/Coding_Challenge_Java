@@ -124,6 +124,8 @@ class OneDimensionalArray{
 		return strs;
 	}
 	
+	//5 insert an element
+	// move one index to the right from the index of the element where you wanted to insert it
 	
 }
 
