@@ -65,12 +65,30 @@ class ArrayListFromCollections{
 	}
 	
 	// compare two array lists
+	public boolean comapreTwoArrayLists(ArrayList<Integer> al1, ArrayList<String> al2) {
+//		if(al1.size() == 0 || al2.size() == 0) {
+//			return false;
+//		}else {
+//			if(al1.equals(al2)) {
+//				return true;
+//			}
+//		}
+//		return false;
+		return al1.equals(al2);
+	}
 	
 	// access an element in array list
-	
-	
-	
-	
+	public void accessElementInAL(ArrayList<String> al) {
+		System.out.println("ArrayList elements are...");
+		for(int i = 0; i<al.size(); i++) {
+			System.out.println("	" + al.get(i));
+		}
+	}
+	 
+	// size of an array list
+	public int getArrayListSize(ArrayList<Boolean> al) {
+		return al.size();
+	}
 }
 
 
@@ -100,6 +118,29 @@ public class ArrayLists {
 		// searchElement method
 		boolean result1 = alfc.searchElement();
 		System.out.println(result1);
+		
+		//comapreTwoArrayLists method
+		ArrayList<Integer> arList1 = new ArrayList<>();
+		ArrayList<Integer> arList2 = new ArrayList<>();
+		
+		//accessElementInAL method
+		ArrayList<String> stringAL = new ArrayList<String>();
+		stringAL.add("Coding");
+		alfc.accessElementInAL(stringAL);
+		
+		//getArrayListSize method
+		ArrayList<Boolean> booleanAL1 = new ArrayList<>();
+		int size1 = alfc.getArrayListSize(booleanAL1);
+		System.out.printf("The size of the arrayList is %d ", size1);
+		System.out.println();
+		
+		ArrayList<Boolean> booleanAL2 = new ArrayList<>();
+		booleanAL2.add(false);
+		booleanAL2.add(true);
+		int size2 = alfc.getArrayListSize(booleanAL2);
+		System.out.printf("The size of second arraylist is %d ", size2);
+		System.out.println();
+		
 		
 	}
 
