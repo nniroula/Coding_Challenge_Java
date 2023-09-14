@@ -22,6 +22,17 @@ class LinkedListMethods{
 		return llInteger;
 	}
 	
+	// get the size of the linked list element
+	public int getSize(LinkedList<Character> ch) {
+		return ch.size();
+	}
+	
+	// access an element in the linked list
+	public double getElement(LinkedList<Double> llD) {
+		double element = llD.get(1);
+		return element;
+	}
+	
 }
 
 public class LinkedLists {
@@ -43,5 +54,25 @@ public class LinkedLists {
 		llInt.add(1, 37);
 		LinkedList<Integer> llInteger = llObject.removeElements(llInt);
 		System.out.println(llInteger);
+		
+		// getSize method
+		LinkedList<Character> ch = new LinkedList<>();
+		ch.addFirst('N');
+		ch.addLast('n');
+		ch.add(1, 'a');
+		ch.add(2, 'b');
+		ch.add(3, 'i');
+		int size = llObject.getSize(ch);
+		System.out.printf("Length of linked list is %d ", size);
+		System.out.println();
+		
+		//getElement
+		LinkedList<Double> llD = new LinkedList<>();
+		llD.add(2.5);
+		llD.addFirst(0.5);
+		llD.addLast(9.9999);
+		double number1 = llObject.getElement(llD);
+		System.out.println(number1);
+		
 	}
 }
