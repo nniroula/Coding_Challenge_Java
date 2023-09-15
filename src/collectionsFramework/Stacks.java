@@ -41,8 +41,20 @@ class StackMethods{
 	}
 	
 	// if stack is empty
+	public String isStackEmpty(Stack<String> stack) {
+		if(stack.isEmpty()) {
+			return "Stack is Empty";
+		}
+		return "Stakc is Not empty";
+	}
 	
 	// size or length of stack
+	public int getSize(Stack<Double> stack) {
+		stack.push(2.4);
+		stack.push(3.5);
+		stack.push(8.7);
+		return stack.size();
+	}
 	
 	// access elements in stack
 	
@@ -67,5 +79,21 @@ public class Stacks {
 		boolean result = stkObject.getElement();
 		System.out.printf("The boolean result is %b", result);
 		System.out.println();
+		
+		//isStackEmpty method
+		Stack<String> stack = new Stack<>();
+		
+		String output = stkObject.isStackEmpty(stack);
+		System.out.println(output);
+		
+		// getSize method
+		// NOTE: this call of size method with stack variable is not legal though works
+		Stack<Double> doubleStack = new Stack<>();
+		
+		int size = stkObject.getSize(doubleStack);
+		System.out.printf("The size of the stack is %d", size);
+		System.out.println();
+		
+		
 	}
 }
