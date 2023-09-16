@@ -58,6 +58,7 @@ class StackMethods{
 	
 	// access elements in stack
 	
+	
 	// iterate elements in stack
 }
 
@@ -93,7 +94,6 @@ public class Stacks {
 		int size = stkObject.getSize(doubleStack);
 		System.out.printf("The size of the stack is %d", size);
 		System.out.println();
-		
 		
 	}
 }
