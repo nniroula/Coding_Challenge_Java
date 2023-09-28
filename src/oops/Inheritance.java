@@ -38,7 +38,7 @@ class MotorCycles extends Vehicles{
 	}
 	
 	// override the method
-	@override
+	@Override
 	public int wheels() {
 		return 2;
 	}
@@ -110,7 +110,7 @@ class Child extends Parent{
 	}
 	
 	// override super class method's implementation to return hashMap instead of ArrayList
-	@override
+	@Override
 	public void getIterable(){
 		HashMap<String, String> hmString = new HashMap<>();
 		hmString.put("Role", "Junior Java Developer");
