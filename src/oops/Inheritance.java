@@ -1,4 +1,6 @@
 package oops;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 class Vehicles{
 	private int age = 34;
@@ -47,6 +49,10 @@ class Parent{
 	private String title = "Software Engineer";
 	private double salary = 106400.00;
 	final static double BONUS = 8000.00; // static = class variable, final = constant
+	//public static String person = "Nabin"; // works fine to call in main method
+	//String person = "Nabin";       // cannot call it in main method
+	// public String person = "Nabin"; // static is need to be accessed in static method main
+	static String person = "Nabin";     // static is needed to tell it is a class level variable
 	Parent(String language, String tool){
 		System.out.println("Parent class...");
 		System.out.printf("    Language is %s and tool is %s.", language, tool);
@@ -73,10 +79,54 @@ class Parent{
 		this.salary = newSalary;
 	}
 	
-	// get constant value, also access this in child class without call this method
+	// get constant value, also access this in child class
 	public double getBonus() {
 		return this.BONUS;
 	}
+	
+	// method to be overridden in child class
+	public void getIterable(){
+		ArrayList<Integer> al = new ArrayList<>();
+		al.add(36);
+		al.add(2);
+		al.add(34);
+		al.add(9);
+		System.out.println(al);
+	}
+}
+
+class Child extends Parent{
+	Child(){
+		// call and instantiate the parent class constructor
+		// parent constructor is Parent(String language, String tool)
+		
+		//super(); // this does not work b/c you have to initialize parent constructor
+		super("JavaScript", "ExpressJS");   //works
+		System.out.println();
+		System.out.println("Two lines above are from Parent classs constructor called in child class!");
+		System.out.println("======================");
+		System.out.println();
+		System.out.println("Child class...");
+	}
+	
+	// override super class method's implementation to return hashMap instead of ArrayList
+	@override
+	public void getIterable(){
+		HashMap<String, String> hmString = new HashMap<>();
+		hmString.put("Role", "Junior Java Developer");
+		hmString.put("Experience", "2+ years");
+		hmString.put("Preferred Salary", "80K");
+		hmString.put("Location", "Both onside & remote");
+		System.out.println(hmString);
+	}
+	
+	// call parent class methods with super keyword, it's the same method name
+	public double getSalary() {
+		double wage = super.getSalary();
+		return wage;
+	}
+		
+
 }
 
  
@@ -93,7 +143,7 @@ public class Inheritance {
 		// to access private variable age using getters
 		mc.getPrivateVariableAge();  // do not store it in a variable b/c its void type
 		
-		
+		/* Parent class */
 		// check if the variables and methods in parent class are callable
 		Parent parentObject = new Parent("Java", "JDBC");
 		// get title, get salary and get bonus
@@ -105,6 +155,33 @@ public class Inheritance {
 		//check if the title is updated properly
 		String secondJob = parentObject.getTitle();
 		System.out.printf("    Updated job title is %s ", secondJob);
+		System.out.println();
+		
+		// retrieve the BONUS variable calling the method and also without calling the method
+		double bonus = parentObject.getBonus();
+		System.out.printf("    bonus is %.3f", bonus); // .3f shows 3 decimal places
+		System.out.println();
+			//access public instance variable on a class, you must store it in a variable to access it
+		String person = Parent.person;
+		System.out.printf("    Parent class variable value is %s ", person);
+		System.out.println();
+		
+		/**
+		 * Child class
+		 */
+		// instantiate child class
+		Child childObject = new Child(); // it has super constructor initialized
+		
+		// invoke the method from parent class before it was overridden in child class
+		System.out.println("In Parent iterable was...");
+		parentObject.getIterable();
+		// invoke overridden method of the child class
+		System.out.println("In Child iterable is...");
+		childObject.getIterable();
+		
+		// invoke child class getSalary method
+		double childClassSalary = childObject.getSalary();
+		System.out.printf("Salary in child class is %.3f ", childClassSalary);
 		System.out.println();
 		
 	}
