@@ -4,7 +4,7 @@ import java.sql.*;
 public class InsertStaticContent {
 	public static void main(String []args) {
 		// setup to use mysql database
-		String url = "jdbc:mysql://localhost:3306/jdbc_db_one"; // link to your database
+		String url = "jdbc:mysql://localhost:3306/YOUR_DATABASE_HERE"; // link to your database
 		String username = "YOUR USERNAME HERE"; // mysql username
 		String password = "YOUR PASSWORD HERE"; // mysql password
 		
