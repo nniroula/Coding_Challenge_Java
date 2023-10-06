@@ -7,8 +7,9 @@ public class JDBC {
 		
 		// set up for mysql database
 		String url = "jdbc:mysql://localhost:3306/jdbc_db_one";
-		String username = "root";
-		String password = "Mysql#23";
+		String username = "root"; // your mysql username
+		// Enter your mySQl password
+		String password = "please enter your MySQL password";
 		
 		// sql query to retrieve all information from the table
 		String getInfo = "SELECT * FROM developer_tools";	
