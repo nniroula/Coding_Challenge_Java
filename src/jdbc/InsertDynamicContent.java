@@ -15,9 +15,9 @@ public class InsertDynamicContent {
 		System.out.println("JDBC to insert Dynamic content...");
 		
 		// set up for connection to local host
-		String url = "jdbc:mysql://localhost:3306/jdbc_db_one";
-		String username = "root";
-		String password = "Mysql#23";
+		String url = "jdbc:mysql://localhost:3306/YOUR_DATABASE_HERE";
+		String username = "YOUR MYSQL USERNAME";
+		String password = "YOUR MYSQL PASSWORD";
 		
 		// dynamic content
 		String lang = "Scala"; // for language column in database table
