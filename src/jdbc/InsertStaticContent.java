@@ -24,6 +24,10 @@ public class InsertStaticContent {
 			int numberOfRowsAffected = st.executeUpdate(insertStaticContent);
 			System.out.printf("Number of rows affected = %d ", numberOfRowsAffected);
 			System.out.println();
+			
+			//close the connection and the statement
+			con.close();
+			st.close();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
