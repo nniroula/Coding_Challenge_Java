@@ -1,12 +1,24 @@
 package jdbcDesignPatterns;
 import java.sql.*;
 
+/*
+ * This class contains MySql url, username, and password
+ */
+class JdbcSetUp{
+	// JDBC Steps
+	String url = "jdbc:mysql://localhost:3306/jdbc_students_db"; //mysql connector
+	String username = "YOUR MySql User name"; // FIx this
+	String password = "YOUR MySql Password";  // Fix this
+}
+
+
 class UpdateDataBase{
 	public void updateDatabase() {
-		// jdbc setup
-		String url = "jdbc:mysql://localhost:3306/jdbc_students_db";
-		String username = "root";
-		String password = "Mysql#23";
+		// JDBC setup
+		JdbcSetUp setupObject = new JdbcSetUp();
+		String url = setupObject.url;
+		String username = setupObject.username;
+		String password = setupObject.password;
 		
 		// insert values in database
 		String insertValues = "INSERT INTO students(student_id, first_name, last_name)"
@@ -28,8 +40,7 @@ class UpdateDataBase{
 			int secondInsert = st.executeUpdate(std2);
 			int thirdInsert = st.executeUpdate(std3);
 			System.out.printf("Number of rows affected = %d", rowCount + secondInsert + thirdInsert);
-			System.out.println();
-//			
+			System.out.println();		
 			// close connections
 			con.close();
 			st.close();
@@ -49,14 +60,13 @@ class StudentDAO{
 			stdObject.rollNumber = std_id;
 			
 			// JDBC Steps
-			String url = "jdbc:mysql://localhost:3306/jdbc_students_db";
-			
-			String username = "root";
-			String password = "Mysql#23";
+			JdbcSetUp setupObject = new JdbcSetUp();
+			String url = setupObject.url;
+			String username = setupObject.username;
+			String password = setupObject.password;
 			
 			// sql retrieval query
 			// use prepared statement, use ? for dynamic/variable value
-			//String q = "SELECT first_name, last_name FROM students WHERE student_id = ?";	
 			String q = "SELECT first_name, last_name FROM students WHERE student_id = ?";
 			Class.forName("com.mysql.cj.jdbc.Driver"); // load the driver
 			Connection con = DriverManager.getConnection(url, username, password); // connect to the database
@@ -65,7 +75,6 @@ class StudentDAO{
 			//update the variable
 			ps.setInt(1, std_id); // first 1 = ?, std_id is for student_id in table
 			ResultSet rs = ps.executeQuery(); //execute the statement
-			
 			// resultSet contains table representing first and last name in this case
 			while(rs.next()) {
 				String fName = rs.getString(1);
@@ -94,7 +103,9 @@ class Student{
 	String lastName;
 }
 
-// main class
+/*
+ * main class
+ */
 public class JdbcDAO {
 	public static void main(String []args) {
 		System.out.println("JDBC Design patterns...");
